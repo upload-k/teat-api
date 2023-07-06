@@ -6,6 +6,11 @@ const port = 3000;
 // ルートログ
 app.use((req, res)  => {
   console.log(new Date(), req.method, req.url);
+
+  // 全てのオリジンを許可
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
   req.next();
 })
 

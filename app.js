@@ -3,6 +3,9 @@ const productRepository = require('./repository/product-repository');
 const app = express();
 const port = 3000;
 
+app.use(express.json())
+app.use(express.urlencoded({ extended: true}))
+
 // ルートログ
 app.use((req, res)  => {
   console.log(new Date(), req.method, req.url);

@@ -6,7 +6,7 @@ module.exports = {
   },
 
   getByTitle(title) {
-    const product = PRODUCTS.find((p) => p.title.indexOf(title) >= 0);
+    const product = PRODUCTS.find((p) => p.title === title);
     if (!product) {
       throw new Error('存在しない商品です');
     }
@@ -19,7 +19,7 @@ module.exports = {
       throw new Error('productには、title, price, descriptionが必要です');
     }
 
-    if(!!this.getByTitle(product.title)) {
+    if(!!PRODUCTS.find((p) => p.title === product.title)) {
       throw new Error('既に登録されている商品名です');
     }
 

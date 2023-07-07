@@ -85,7 +85,7 @@ app.delete('/products/:title', (req, res) => {
     });
   }
 
-  res.status(204).json({
+  res.status(200).json({
     message: 'ok',
   });
 });
